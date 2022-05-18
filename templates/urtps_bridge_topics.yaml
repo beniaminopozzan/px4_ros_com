@@ -61,3 +61,13 @@ rtps:
     send: true
   - msg: SensorCombined
     send: true
+  - msg: VehicleAttitude
+    send: True
+  - msg: ActuatorOutputs
+    send: true
+    receive: true
+  - msg: ActuatorControls
+    receive: true
+  - base: ActuatorControls
+    msg: ActuatorControls0
+    receive: true
