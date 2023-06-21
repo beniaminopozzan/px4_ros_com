@@ -38,11 +38,11 @@
  * Adapted from MAVROS ftf_frame_conversions.cpp and ftf_quaternion_utils.cpp.
  */
 
-#include <px4_ros_com/frame_transforms.h>
+#include <px4_utils/frame_transforms.h>
 
 #include <assert.h>
 
-namespace px4_ros_com
+namespace px4_utils
 {
 namespace frame_transforms
 {
@@ -399,4 +399,4 @@ Covariance9d transform_frame(const Covariance9d &cov, const Eigen::Quaterniond &
 }
 
 } // namespace frame_transforms
-} // namespace px4_ros_com
+} // namespace px4_utils

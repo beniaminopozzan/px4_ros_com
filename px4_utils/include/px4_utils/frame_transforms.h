@@ -1,6 +1,6 @@
 /****************************************************************************
  *
- * Copyright 2020 PX4 Development Team. All rights reserved.
+ * Copyright 2023 PX4 Development Team. All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are met:
@@ -53,7 +53,7 @@
 #include <geometry_msgs/msg/vector3.hpp>
 #include <sensor_msgs/msg/imu.hpp>
 
-namespace px4_ros_com
+namespace px4_utils
 {
 namespace frame_transforms
 {
@@ -443,6 +443,6 @@ template <class T> inline T enu_to_baselink_frame(const T &in, const Eigen::Quat
 }
 
 } // namespace frame_transforms
-} // namespace px4_ros_com
+} // namespace px4_utils
 
 #endif // FRAME_TRANSFORMS_H

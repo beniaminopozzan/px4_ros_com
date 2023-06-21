@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>px4_ros_com</name>
+  <version>0.1.0</version>
+  <description>Common package to interface ROS 2 with PX4</description>
+
+  <maintainer email="beniamino.pozzan@gmail.com">Beniamino Pozzan</maintainer>
+  <author email="beniamino.pozzan@gmail.com">Beniamino Pozzan</author>
+  <author email="nuno.marques@dronesolutions.io">Nuno Marques</author>
+
+
+  <license>BSD 3-Clause</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <exec_depend>px4_utils</exec_depend>
+  <exec_depend>px4_demo_cpp</exec_depend>
+  <exec_depend>px4_demo_py</exec_depend>
+
+  <test_depend>ament_lint_auto</test_depend>
+  <test_depend>ament_lint_common</test_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>

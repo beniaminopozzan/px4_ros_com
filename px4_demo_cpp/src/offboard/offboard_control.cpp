@@ -42,6 +42,7 @@
 #include <px4_msgs/msg/trajectory_setpoint.hpp>
 #include <px4_msgs/msg/vehicle_command.hpp>
 #include <px4_msgs/msg/vehicle_control_mode.hpp>
+#include <px4_utils/frame_transforms.h>
 #include <rclcpp/rclcpp.hpp>
 #include <stdint.h>
 
@@ -149,7 +150,11 @@ void OffboardControl::publish_offboard_control_mode()
 void OffboardControl::publish_trajectory_setpoint()
 {
 	TrajectorySetpoint msg{};
-	msg.position = {0.0, 0.0, -5.0};
+
+	Eigen::Vector3d pos_ref_ENU{0.0, 0.0, 5.0};
+	Eigen::Vector3f pos_ref_NED = px4_utils::frame_transforms::enu_to_ned_local_frame(pos_ref_ENU).cast<float>();
+	
+	msg.position = {pos_ref_NED[0], pos_ref_NED[1], pos_ref_NED[2]};
 	msg.yaw = -3.14; // [-PI:PI]
 	msg.timestamp = this->get_clock()->now().nanoseconds() / 1000;
 	trajectory_setpoint_publisher_->publish(msg);
